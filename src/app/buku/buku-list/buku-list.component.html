@@ -1,0 +1,27 @@
+<table class="table table-striped table-bordered table-hover table-condensed" >
+  <thead>
+  <tr>
+    <th>No</th>
+    <th>ISBN</th>
+    <th>Nama</th>
+    <th>QTY</th>
+    <th>Aksi</th>
+  </tr>
+  </thead>
+  <tbody >
+  <tr  *ngFor="let bku of bukuParent; let i=index" [appHoverHighlight]="{background:'yellow', text:'red'}">
+    <td>{{ i + 1 }}</td>
+    <td>{{bku.isbn}}</td>
+    <td>{{bku.nama}}</td>
+    <td>{{bku.qty}}</td>
+    <td><button type="button" class="btn btn-secondary" (click)="showname(i)">Batal</button></td>
+  </tr>
+  <tr *ngFor="let bku of bukuParent; let i=index" >
+    <th></th>
+    <th>Total</th>
+    <th></th>
+    <th> {{bku.qty}} </th>
+    <th><button (click)="showname(i)">Pinjam</button></th>
+  </tr>
+  </tbody>
+</table>

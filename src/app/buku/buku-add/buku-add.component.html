@@ -1,0 +1,19 @@
+<h4>Pinjam Buku</h4>
+<form [formGroup]="bukuForm" (ngSubmit)="kirim()">
+  <input type="text" [formControlName]="'isbn'" class="form-control" placeholder="ISBN" [(ngModel)]="inputInfo.isbn">
+  <span *ngIf="!bukuForm.get('isbn').valid && bukuForm.get('isbn').touched" class='help-block'>
+    <span *ngIf="bukuForm.get('isbn').errors['required']">Wajib di isi!!</span>
+    <span *ngIf="bukuForm.get('isbn').errors['blank']">Tidak Boleh Kosong!!</span>
+  </span>
+  <input type="text" [formControlName]="'nama'" class="form-control" placeholder="Nama" [(ngModel)]="inputInfo.nama">
+  <span *ngIf="!bukuForm.get('nama').valid && bukuForm.get('nama').touched" class='help-block'>
+    <span *ngIf="bukuForm.get('nama').errors['required']">Wajib di isi!!</span>
+    <span *ngIf="bukuForm.get('nama').errors['blank']">Tidak Boleh Kosong!!</span>
+  </span>
+  <input type="text" [formControlName]="'qty'" class="form-control" placeholder="QTY" [(ngModel)]="inputInfo.qty">
+  <span *ngIf="!bukuForm.get('qty').valid && bukuForm.get('qty').touched" class='help-block'>
+    <span *ngIf="bukuForm.get('qty').errors['required']">Wajib di isi!!</span>
+    <span *ngIf="bukuForm.get('qty').errors['blank']">Tidak Boleh Kosong!!</span>
+  </span>
+  <button type="submit" class="btn btn-primary" (click)="tambahBuku()">Pilih</button>
+</form>

@@ -1,0 +1,2 @@
+<app-buku-add (bukuAdded)="onBukuAdded($event)" [bukuChild]="bukuEdit"></app-buku-add>
+<app-buku-list [bukuParent] = bukuList (dariChildKeParent)="onBukuEdit($event)"></app-buku-list>
